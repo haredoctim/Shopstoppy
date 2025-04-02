@@ -53,7 +53,7 @@ const Cart = () => {
 
   const ShowCart = () => {
     const subtotal = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
-    const shipping = subtotal > 0 ? (subtotal >= 1000 ? 0 : 60) : 0; // Free shipping over 1000
+    const shipping = subtotal > 0 ? (subtotal >= 5000 ? 0 : 200) : 0; // Free shipping over 1000
 
     return (
       <div className="container my-5">
@@ -137,9 +137,9 @@ const Cart = () => {
                     )}
                   </span>
                 </div>
-                {subtotal > 0 && subtotal < 1000 && (
+                {subtotal > 0 && subtotal < 5000 && (
                   <div className="alert alert-info small mt-2">
-                    Add ₹{(1000 - subtotal).toFixed(2)} more to get free shipping!
+                    Add ₹{(5000 - subtotal).toFixed(2)} more to get free shipping!
                   </div>
                 )}
                 <hr />
