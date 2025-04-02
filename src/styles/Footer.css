@@ -133,6 +133,7 @@
     transition: all 0.2s ease;
   }
   
+  
   .social-icons a:hover {
     background-color: #a88b6b;
     color: white;
@@ -151,7 +152,43 @@
     color: #6b7280;
     font-size: 0.9rem;
   }
+  .contact-phone {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 0.5rem;
+  }
   
+  .contact-phone a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: rgba(168, 139, 107, 0.1);
+    color: #a88b6b;
+    transition: all 0.2s ease;
+  }
+  
+  .contact-phone a:hover {
+    background-color: #a88b6b;
+    color: white;
+    transform: translateY(-3px);
+  }
+  
+  .phone-number {
+    font-size: 0.95rem;
+    color: #6b7280;
+    margin-left: 0.5rem;
+  }
+  
+  /* Responsive adjustment for phone display */
+  @media (max-width: 768px) {
+    .contact-phone {
+      justify-content: center;
+    }
+  }
   /* Developer credit */
   .developer-credit {
     padding: 1rem 0;

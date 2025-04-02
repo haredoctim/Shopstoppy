@@ -27,7 +27,7 @@ const Main = () => {
                   <br />
                   Hope you find what you're looking for :)
                 </p>
-                <Link to="/products" className="hero-button">
+                <Link to="/product" className="hero-button">
                   Shop Now
                 </Link>
               </div>
