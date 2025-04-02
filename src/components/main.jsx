@@ -4,7 +4,7 @@ import "../styles/Home.css";
 import P1 from "../photos/paintingSailBoat.jpg";
 import E1 from "../photos/epoxySeaCoasters.jpg";
 import H1 from "../photos/handicraftRingBasket.jpg";
-import F1 from "../photos/fabricFullDress.jpg";
+import F1 from "../photos/fabricFull.jpg";
 import MOD from "../photos/modArt.png";
 import Abt from "../photos/about.jpg";
 const Main = () => {

@@ -15,7 +15,7 @@ import H1 from "../photos/handicraftRingBasket.jpg";
 import H2 from "../photos/handicraftRingTray.jpg";
 import H3 from "../photos/handicraftSaintNames.jpg";
 
-import F1 from "../photos/fabricFullDress.jpg";
+import F1 from "../photos/fabricFull.jpg";
 import F2 from "../photos/fabricFullDress1.jpg";
 import F3 from "../photos/fabricGoldRose.jpg";
 import F4 from "../photos/fabricRoses.jpg";
