@@ -1,0 +1,258 @@
+/* Modern Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    padding: 0.75rem 0;
+    height: 70px; /* Define fixed height */
+  }
+  
+  .navbar-scrolled {
+    padding: 0.5rem 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    height: 60px; /* Slightly smaller when scrolled */
+  }
+  
+  /* Add this to create space for the navbar */
+  body {
+    padding-top: 90px; /* Slightly more than navbar height to ensure content doesn't touch navbar */
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem; /* Increased horizontal padding */
+    gap: 2rem; /* Added gap between flex items */
+    height: 100%;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent logo from shrinking */
+  }
+  
+  .navbar-logo {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #3a3a3a;
+    transition: color 0.2s ease;
+    white-space: nowrap; /* Prevent logo text from wrapping */
+  }
+  
+  .logo-text {
+    background: linear-gradient(90deg, #a88b6b, #c0a88f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    flex-grow: 1; /* Allow links to take available space */
+    justify-content: center; /* Center links in available space */
+  }
+  
+  .navbar-link {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #4b5563;
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+    transition: color 0.2s ease;
+  }
+  
+  .navbar-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(90deg, #a88b6b, #c0a88f);
+    transition: width 0.3s ease;
+  }
+  
+  .navbar-link:hover {
+    color: #a88b6b;
+  }
+  
+  .navbar-link:hover::after,
+  .navbar-link.active::after {
+    width: 100%;
+  }
+  
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+  }
+  
+  .navbar-btn {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+  }
+  
+  .login-btn {
+    color: #a88b6b;
+    background-color: rgba(168, 139, 107, 0.1);
+  }
+  
+  .login-btn:hover {
+    background-color: rgba(168, 139, 107, 0.2);
+  }
+  
+  .register-btn {
+    color: white;
+    background-color: #a88b6b;
+  }
+  
+  .register-btn:hover {
+    background-color: #97795c;
+  }
+  
+  .cart-btn {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #4b5563;
+    background-color: #f3f4f6;
+    font-weight: 500;
+    font-size: 0.9rem;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+  
+  .cart-btn:hover {
+    background-color: #e5e7eb;
+    color: #3a3a3a;
+  }
+  
+  .cart-count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    background-color: #a88b6b;
+    color: white;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    padding: 0 0.3rem;
+  }
+  
+  .btn-text {
+    margin-left: 0.5rem;
+  }
+  
+  .menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: #4b5563;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    body {
+      padding-top: 80px; /* Adjusted for mobile */
+    }
+  
+    .navbar-container {
+      padding: 0 1.5rem; /* Increased padding for mobile */
+      gap: 1rem; /* Reduced gap for mobile */
+    }
+  
+    .navbar-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem 0;
+      display: none;
+      z-index: 999;
+    }
+    
+    .navbar-links.active {
+      display: flex;
+    }
+    
+    .navbar-link {
+      margin: 0.75rem 1.5rem;
+      width: calc(100% - 3rem);
+    }
+    
+    .menu-button {
+      display: block;
+      order: 3;
+    }
+    
+    .navbar-actions {
+      order: 2;
+      margin-left: auto; /* Push actions to the right */
+      margin-right: 1rem; /* Add space before hamburger menu */
+    }
+    
+    .navbar-btn .btn-text {
+      display: none;
+    }
+    
+    .navbar-btn {
+      padding: 0.5rem;
+    }
+  }
+  
+  /* For very small screens */
+  @media (max-width: 360px) {
+    .navbar-logo {
+      font-size: 1.25rem; /* Slightly smaller logo text */
+    }
+    
+    .navbar-container {
+      padding: 0 1rem; /* Further reduced padding */
+    }
+    
+    .navbar-actions {
+      gap: 0.5rem; /* Smaller gap between buttons */
+    }
+  }
+  
+  /* Smooth animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .navbar-links.active {
+    animation: fadeIn 0.3s ease forwards;
+  }

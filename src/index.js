@@ -26,6 +26,7 @@ root.render(
   <BrowserRouter>
     <ScrollToTop>
       <Provider store={store}>
+      <div className="content-wrap curly-background">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product" element={<Products />} />
@@ -39,6 +40,7 @@ root.render(
           <Route path="*" element={<PageNotFound />} />
           <Route path="/product/*" element={<PageNotFound />} />
         </Routes>
+        </ div>
       </Provider>
     </ScrollToTop>
     <Toaster />
