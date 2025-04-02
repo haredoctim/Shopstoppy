@@ -45,7 +45,7 @@ const Cart = () => {
   const EmptyCart = () => (
     <div className="text-center my-5 py-5">
       <h3>Your cart is empty!</h3>
-      <Link to="/products" className="btn btn-dark mt-3">
+      <Link to="/product" className="btn btn-dark mt-3">
         Continue Shopping
       </Link>
     </div>

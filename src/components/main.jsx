@@ -5,6 +5,8 @@ import P1 from "../photos/paintingSailBoat.jpg";
 import E1 from "../photos/epoxySeaCoasters.jpg";
 import H1 from "../photos/handicraftRingBasket.jpg";
 import F1 from "../photos/fabricFullDress.jpg";
+import MOD from "../photos/modArt.png";
+import Abt from "../photos/about.jpg";
 const Main = () => {
   return (
     <>
@@ -14,7 +16,7 @@ const Main = () => {
           <div className="hero-image-container">
             <img
               className="hero-image"
-              src="./assets/main.png.jpg"
+              src={MOD}
               alt="New Arrivals"
             />
             <div className="hero-overlay">
@@ -38,12 +40,12 @@ const Main = () => {
       <section className="about-section">
         <div className="about-container">
           <div className="about-content">
-            <h2 className="section-title">About Us</h2>
+            <h2 className="section-title">About</h2>
             <p className="about-text">
-              We're passionate about bringing unique, handcrafted art to your home and life. Our curated collection features the finest artisans and creators who pour their hearts into every piece.
+              Welcome my fellow friends, I am Tasneem Decor and I am a passionate artist with a degree in fashiom designing, looking to make an impact in the world by sharing my little art pieces with everyone.
             </p>
             <p className="about-text">
-              From stunning paintings to intricate handicrafts, our mission is to connect you with extraordinary works that inspire and delight.
+              From stunning paintings to intricate handicrafts, my mission is to connect you with extraordinary works that inspire and delight.
             </p>
             {/* <Link to="/about" className="about-button">
               Learn More
@@ -52,7 +54,7 @@ const Main = () => {
           <div className="about-image-container">
             <img
               className="about-image"
-              src={F1}
+              src={Abt}
               alt="Our Workshop"
             />
           </div>

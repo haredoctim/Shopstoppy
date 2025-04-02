@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { ProductData } from "../data/ProductData.js";
 import toast from "react-hot-toast";
 import "../styles/Products.css"; // Using the existing CSS file
-
+import { Navbar, Footer } from "../components";
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
@@ -61,6 +61,9 @@ const Product = () => {
   );
 
   return (
+    <>
+    <Navbar />
+    
     <div className="page-container curly-background">
       <BackgroundDecoration />
       
@@ -223,7 +226,10 @@ const Product = () => {
           }
         }
       `}</style>
+    
     </div>
+    <Footer />
+    </>
   );
 };
 
