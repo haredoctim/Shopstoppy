@@ -42,7 +42,7 @@ const Main = () => {
           <div className="about-content">
             <h2 className="section-title">About</h2>
             <p className="about-text">
-              Welcome my fellow friends, I am Tasneem Decor and I am a passionate artist with a degree in fashiom designing, looking to make an impact in the world by sharing my little art pieces with everyone.
+              Welcome my fellow friends, I am Tasneem Decor and I am a passionate artist with a degree in fashion designing, looking to make an impact in the world by sharing my little art pieces with everyone.
             </p>
             <p className="about-text">
               From stunning paintings to intricate handicrafts, my mission is to connect you with extraordinary works that inspire and delight.

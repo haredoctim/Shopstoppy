@@ -10,7 +10,7 @@ const Footer = () => {
         {/* Decorative divider */}
         <div className="decorative-divider">
           <div className="divider-line"></div>
-          <div className="divider-ornament">💛</div>
+          <div className="divider-ornament">↼❆⇀</div>
           <div className="divider-line"></div>
         </div>
        
@@ -42,11 +42,12 @@ const Footer = () => {
               <a href="mailto:tasydecor@gmail.com" aria-label="Email">
                 <i className="fa fa-envelope"></i>
               </a>
-            </div>
-            <div className="contact-phone">
-              <a href="https://wa.me/+919826712707" aria-label="WhatsApp" target="_blank" rel="noreferrer">
+              <a href="https://wa.me/919826712707" aria-label="WhatsApp" target="_blank" rel="noreferrer">
                 <i className="fa fa-whatsapp"></i>
               </a>
+            </div>
+            <div className="contact-phone"style={{ marginLeft: '10px' }}>
+              <i className="fa fa-phone"></i>
               <span className="phone-number">+91 9826712707</span>
             </div>
           </div>

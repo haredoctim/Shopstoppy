@@ -115,7 +115,10 @@
     flex: 1;
     min-width: 300px;
   }
-  
+  .about-content .section-title::after {
+    left: 7%;
+    transform: translateX(-50%);
+}
   .section-title {
     font-size: 2.2rem;
     color: var(--primary-color);
@@ -128,10 +131,24 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%; /* Position at center */
+    transform: translateX(-50%); /* Shift back by half the width to center */
     width: 60px;
     height: 3px;
     background-color: var(--accent-color);
+  }
+  
+  /* If you want the line centered relative to the text but the text itself left-aligned */
+  .text-left .section-title::after {
+    left: 0;
+    transform: none;
+  }
+  
+  /* If you want the underline to match text width exactly */
+  .section-title.full-width::after {
+    width: 100%;
+    left: 0;
+    transform: none;
   }
   
   .about-text {
