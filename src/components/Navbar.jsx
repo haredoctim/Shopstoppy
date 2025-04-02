@@ -1,43 +1,63 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import '../styles/Navbar.css';
 
 const Navbar = () => {
-    const state = useSelector(state => state.handleCart)
+    const state = useSelector(state => state.handleCart);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+
+    // Add scroll effect
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light py-3 sticky-top">
-            <div className="container">
-                <NavLink className="navbar-brand fw-bold fs-4 px-2" to="/"> ShopStoppy</NavLink>
-                <button className="navbar-toggler mx-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
-
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav m-auto my-2 text-center">
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/">Home </NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/product">Products</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/about">About</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/contact">Contact</NavLink>
-                        </li>
-                    </ul>
-                    <div className="buttons text-center">
-                        <NavLink to="/login" className="btn btn-outline-dark m-2"><i className="fa fa-sign-in-alt mr-1"></i> Login</NavLink>
-                        <NavLink to="/register" className="btn btn-outline-dark m-2"><i className="fa fa-user-plus mr-1"></i> Register</NavLink>
-                        <NavLink to="/cart" className="btn btn-outline-dark m-2"><i className="fa fa-cart-shopping mr-1"></i> Cart ({state.length}) </NavLink>
-                    </div>
+        <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
+            <div className="navbar-container">
+                <div className="navbar-left">
+                    <NavLink className="navbar-logo" to="/">
+                        <span className="logo-text">ShopStoppy</span>
+                    </NavLink>
                 </div>
-
-
+                
+                <div className={`navbar-links ${menuOpen ? 'active' : ''}`}>
+                    <NavLink className="navbar-link" to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
+                    <NavLink className="navbar-link" to="/product" onClick={() => setMenuOpen(false)}>Products</NavLink>
+                    <NavLink className="navbar-link" to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
+                </div>
+                
+                <div className="navbar-actions">
+                    <NavLink to="/login" className="navbar-btn login-btn">
+                        <i className="fa fa-sign-in-alt"></i> 
+                        <span className="btn-text">Login</span>
+                    </NavLink>
+                    <NavLink to="/register" className="navbar-btn register-btn">
+                        <i className="fa fa-user-plus"></i> 
+                        <span className="btn-text">Register</span>
+                    </NavLink>
+                    <NavLink to="/cart" className="cart-btn">
+                        <i className="fa fa-shopping-cart"></i> 
+                        <span className="cart-count">{state.length}</span>
+                    </NavLink>
+                </div>
+                
+                <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
+                    <i className={`fa ${menuOpen ? 'fa-times' : 'fa-bars'}`}></i>
+                </button>
             </div>
         </nav>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;
